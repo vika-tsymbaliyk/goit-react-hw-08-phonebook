@@ -8,7 +8,7 @@ import { addContact } from "redux/contacts/operations";
 
 
 
-const SignupSchema = Yup.object().shape({
+export const SignupSchema = Yup.object().shape({
     name: Yup.string()
     .test(
       "name",
@@ -61,7 +61,7 @@ return(
     <ErrorMsg name="name" component="span"/>
     </Label>
     
-    <Label>Namber
+    <Label>Number
     <Input name="number" type="tel"/>
     <ErrorMsg name="number" component="span"/>
     </Label>
