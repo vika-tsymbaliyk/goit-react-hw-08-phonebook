@@ -2,8 +2,8 @@ import { Formik } from "formik";
 import * as Yup from 'yup';
 import { Label, ErrorMsg, Input, PhonebookForm} from "./ContactForm.styled";
 import { useDispatch, useSelector } from "react-redux";
-import { selectContacts } from "redux/selectors";
-import { addContact } from "redux/operations";
+import { selectContacts } from "redux/contacts/selectors";
+import { addContact } from "redux/contacts/operations";
 
 
 
@@ -16,9 +16,9 @@ const SignupSchema = Yup.object().shape({
       value => /^[a-zA-Zа-яА-ЯіІїЇ ]+((['][a-zA-Zа-яА-ЯіІїЇ ])?[a-zA-Zа-яА-ЯіІїЇ]*)*$/.test(value)
     )
     .required('Required'),
-    phone: Yup.string()
+    number: Yup.string()
     .test(
-      "phone",
+      "number",
       "Phone number must be digits and can contain spaces, dashes, parentheses and can start with +",
       value =>/\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}/.test(value)
     )
@@ -32,11 +32,11 @@ export const ContactForm = ()=>{
     const handleSubmit = (contact, actions)=> {
         const isExist = contacts.some(
         item => item.name.toLowerCase() === contact.name.toLowerCase()
-            || item.phone === contact.phone
+            || item.number === contact.number
         );
     
         if (isExist) {
-          alert(`${contact.name} or ${contact.phone} is already in contacts.`);
+          alert(`${contact.name} or ${contact.number} is already in contacts.`);
             return;
         }
         dispatch(addContact(contact));
@@ -48,7 +48,7 @@ return(
     initialValues={
       {
           name: "",
-          phone: "",
+          number: "",
       }}
       
     validationSchema={SignupSchema}
@@ -62,8 +62,8 @@ return(
     </Label>
     
     <Label>Namber
-    <Input name="phone" type="tel"/>
-    <ErrorMsg name="phone" component="span"/>
+    <Input name="number" type="tel"/>
+    <ErrorMsg name="number" component="span"/>
     </Label>
 
    <button type="submit">

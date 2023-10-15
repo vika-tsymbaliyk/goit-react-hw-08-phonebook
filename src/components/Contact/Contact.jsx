@@ -1,4 +1,4 @@
-import { deleteContact } from "redux/operations";
+import { deleteContact } from "redux/contacts/operations";
 import { ContactWrap, ButtonDel } from "./Contact.styled";
 import { useDispatch} from "react-redux";
 
