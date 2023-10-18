@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 import { selectIsLoading } from 'redux/contacts/selectors';
 import { ContactList } from 'components/ContactList/ContactList';
 import { fetchContacts } from 'redux/contacts/operations';
@@ -16,9 +16,9 @@ export default function Tasks() {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>Your tasks</title>
-      </Helmet>
+      </Helmet> */}
       <ContactForm />
       <div>{isLoading && 'Request in progress...'}</div>
       <ContactList />
