@@ -5,5 +5,5 @@ export const AppBarStyled = styled.header`
   padding-right: ${({ theme }) => theme.spacing(5)};
   padding-top: ${({ theme }) => theme.spacing(5)};
   padding-bottom: ${({ theme }) => theme.spacing(5)};
-  background-color: ${({ theme }) => theme.colors.bg};
+  /* background-color: ${({ theme }) => theme.colors.bg}; */
 `;

@@ -1,9 +1,20 @@
 import styled from 'styled-components'
 
 export const ContactWrap = styled.div`
-  display:flex;
+  /* display:flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 10px; */
+  padding: ${({ theme }) => theme.spacing(10)};
+  /* background-color: ${({ theme }) => theme.colors.light}; */
+  background-color: lightskyblue;
+  border-radius: ${({ theme }) => theme.spacing(2)};
+
+  /* color: ${({ theme }) => theme.colors.gray}; */
+  color: gray;
+  box-shadow: ${({ theme }) => theme.shadows.regular};
+
+  position: relative;
+  
 `;
 
 export const ButtonDel = styled.button`

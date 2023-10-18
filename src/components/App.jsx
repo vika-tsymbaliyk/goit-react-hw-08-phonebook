@@ -7,6 +7,7 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 import { lazy } from "react";
+import { Container } from "./Container/Container.styled";
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -23,6 +24,7 @@ export const App =()=> {
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
+    <Container>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
@@ -46,6 +48,7 @@ export const App =()=> {
         />
       </Route>
     </Routes>
+    </Container>
   );
 
 }

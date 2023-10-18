@@ -1,27 +1,22 @@
-const styles = {
-    container: {
-      minHeight: 'calc(100vh - 50px)',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    title: {
-      fontWeight: 500,
-      fontSize: 48,
-      textAlign: 'center',
-    },
-  };
-  
+import { Container} from 'components/Container/Container.styled';
+import { HomePage, ImgStyle, TextWrap } from './pages.styled';
+import image from '../images/pngwing.com.png'
+
+
+
   export default function Home() {
+
     return (
-      <div style={styles.container}>
-        <h1 style={styles.title}>
-          Task manager welcome page{' '}
-          <span role="img" aria-label="Greeting icon">
-            💁‍♀️
-          </span>
-        </h1>
-      </div>
+      <Container>
+        <HomePage>
+          <ImgStyle src={image} alt=''/>
+          <TextWrap>
+            <p>Welcome to</p>
+            <h1>  Phonebook </h1>
+            <p>application for convenient storage of your contacts. Click "Register" if you are here for the first time or "Log in" if you are already registered</p>
+          </TextWrap>
+        </HomePage>
+      </Container>
     );
   }
   

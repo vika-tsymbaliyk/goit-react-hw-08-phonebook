@@ -7,6 +7,7 @@ export const ContactList =( )=>{
   const contacts = useSelector(selectVisibleContacts);
 
     return(
+      <div>
         <ContactListWrap>
           {contacts.map(contact => (
             <ListItem key={contact.id}>
@@ -14,6 +15,7 @@ export const ContactList =( )=>{
             </ListItem>
           ))}
         </ContactListWrap>
+        </div>
     )
 }
 

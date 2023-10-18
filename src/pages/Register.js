@@ -1,11 +1,11 @@
-// import { Helmet } from 'react-helmet';
+import { Container } from 'components/Container/Container.styled';
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 
 export default function Register() {
   return (
-    <div>
+    <Container>
       
       <RegisterForm />
-    </div>
+    </Container>
   );
 }
