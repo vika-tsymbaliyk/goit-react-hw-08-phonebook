@@ -9,7 +9,7 @@ import image from '../images/pngwing.com.png'
     return (
       <Container>
         <HomePage>
-          <ImgStyle src={image} alt=''/>
+          <ImgStyle src={image} alt='picture'/>
           <TextWrap>
             <p>Welcome to</p>
             <h1>  Phonebook </h1>
