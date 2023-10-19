@@ -1,32 +1,37 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+import { Formik } from "formik";
+import { BtnAddContact, Input, Label, PhonebookForm } from 'components/ContactForm/ContactForm.styled';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    dispatch(
-      logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-    form.reset();
+  const handleSubmit = (values, actions) => {
+    const { email, password } = values;
+
+    dispatch( logIn ({ email, password }));
+    actions.resetForm();
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    
+    <Formik 
+        initialValues={{
+          email: "",
+          password: "",
+        }}
+        onSubmit={(values, actions) => handleSubmit(values, actions)}>
+        <PhonebookForm>
+          <Label>
+            Email
+            <Input type="email" name="email" />
+          </Label>
+          <Label>
+            Password
+            <Input type="password" name="password" />
+          </Label>
+          <BtnAddContact type="submit">Log In</BtnAddContact>
+        </PhonebookForm>
+      </Formik>
   );
 };

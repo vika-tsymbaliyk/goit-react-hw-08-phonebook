@@ -9,10 +9,8 @@ export const HomePage = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 24px 20px;
-
+  padding: ${({ theme }) => theme.spacing(6)} ${({ theme }) => theme.spacing(5)};
 `;
-
 export const ImgStyle = styled.img`
   position: absolute;
   top: 0;
@@ -22,7 +20,7 @@ export const ImgStyle = styled.img`
 export const TextWrap = styled.div`
  position: absolute;
  top: 20%;
- right: 10px;
+ right: ${({ theme }) => theme.spacing(2.5)};
  width:50%;
  font-size:  ${({ theme }) => theme.fontSizes.small};
  display:flex;
@@ -42,13 +40,31 @@ export const TextWrap = styled.div`
 export const ContactPage = styled.div`
  display:flex;
  flex-direction: column;
- gap: 12px;
+ gap: ${({ theme }) => theme.spacing(3)};
  width: 100%;
- padding: 20px;
+ padding: ${({ theme }) => theme.spacing(5)};
 `;
-
 export const CenterDiv = styled.div`
   display:flex;
   justify-content: center;
   align-items: center;
 `;
+
+ // LOGIN PAGE
+
+ export const LoginPageWrap = styled.div`
+   padding: ${({ theme }) => theme.spacing(6)};
+ `;
+
+ // REGISTER PAGE
+
+ export const RegisterPageWrap = styled.div`
+   padding: ${({ theme }) => theme.spacing(6)};
+   display: flex;
+   flex-direction: column;
+   align-items:center;
+ `;
+ export const Text = styled.p`
+   color: ${({ theme }) => theme.colors.dark};
+   font-size: ${({ theme }) => theme.fontSizes.medium};
+ `;

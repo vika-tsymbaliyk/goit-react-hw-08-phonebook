@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ContactListWrap = styled.ul`
-  padding:10px;
+  
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

@@ -1,71 +1,43 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-// import { Formik } from "formik";
-// import * as Yup from 'yup';
-
-// const SignupSchema = Yup.object().shape({
-//   name: Yup.string()
-//   .test(
-//     "name",
-//     "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan",
-//   )
-//   .required('Required'),
-//   number: Yup.string()
-//   .test(
-//     "number",
-//     "Phone number must be digits and can contain spaces, dashes, parentheses and can start with +",
-//     value =>/\+?\d{1,4}?[ .\-\s]?\(?\d{1,3}?\)?[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,4}[ .\-\s]?\d{1,9}/.test(value)
-//   )
-//   .required('Required'),
-// });
-
+import { Formik } from "formik";
+import { BtnAddContact, Input, Label, PhonebookForm } from 'components/ContactForm/ContactForm.styled';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    dispatch(
-      register({
-        name: form.elements.name.value,
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    );
-    form.reset();
+  const handleSubmit = (values, actions) => {
+    const { name, email, password } = values;
+
+    dispatch(register({ name, email, password }));
+    actions.resetForm();
   };
 
   return (
-    // <Formik
-    // initialValues={
-    //   {
-    //       name: "",
-    //       email: "",
-    //       password:""
-    //   }}
-      
-    // validationSchema={SignupSchema}
-    // onSubmit={(contact, actions)=>handleSubmit(contact, actions)}
-    // >
-
-    // </Formik>
-
-
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
+    <Formik
+    initialValues={
+      {
+          name: "",
+          email: "",
+          password:""
+      }}
+    onSubmit={(contact, actions)=>handleSubmit(contact, actions)}
+    >
+       <PhonebookForm>
+        <Label>
         Username
-        <input type="text" name="name" />
-      </label>
-      <label >
+        <Input type="text" name="name" />
+      </Label>
+      <Label>
         Email
-        <input type="email" name="email" />
-      </label>
-      <label >
+        <Input type="email" name="email" />
+      </Label>
+      <Label>
         Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+        <Input type="password" name="password" />
+      </Label>
+          <BtnAddContact type="submit">Register</BtnAddContact>
+        </PhonebookForm>
+    </Formik>
   );
 };

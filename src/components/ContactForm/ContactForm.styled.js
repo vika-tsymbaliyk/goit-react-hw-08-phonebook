@@ -9,6 +9,7 @@ export const PhonebookForm = styled(Form)`
   border: 1px solid black;
   border-radius:5px;
   padding: 10px;
+  width: 100%;
 `;
 export const Label = styled.label`
   display: flex;
@@ -16,7 +17,7 @@ export const Label = styled.label`
   gap: 8px;
 `;
 export const Input = styled(Field)`
- 
+ background: transparent;
 `;
 export const BtnAddContact = styled.button`
   color: ${({ theme }) => theme.colors.light};
