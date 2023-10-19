@@ -1,19 +1,21 @@
-import { NavLink } from 'react-router-dom';
 import { useAuth } from 'hooks';
+import {BiHomeAlt} from 'react-icons/bi'
+import {} from 'react-icons/ci'
+import { NavStyled, NavLinkStyled } from './Navigation.styled';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <nav>
-      <NavLink to="/">
-        Home
-      </NavLink>
+    <NavStyled>
+      <NavLinkStyled to="/">
+       <BiHomeAlt size={16}/> Home
+      </NavLinkStyled>
       {isLoggedIn && (
-        <NavLink to="/contacts">
+        <NavLinkStyled to="/contacts">
           Contacts
-        </NavLink>
+        </NavLinkStyled>
       )}
-    </nav>
+    </NavStyled>
   );
 };

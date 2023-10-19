@@ -8,6 +8,7 @@ import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 import { lazy } from "react";
 import { Container } from "./Container/Container.styled";
+import Loader from "./Loader/Loader";
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -22,7 +23,7 @@ export const App =()=> {
   useEffect(()=>{dispatch(refreshUser())},[dispatch])
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <Loader/>
   ) : (
     <Container>
     <Routes>

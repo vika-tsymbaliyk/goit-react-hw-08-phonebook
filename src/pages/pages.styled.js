@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
+    // HOME PAGE
 
 export const HomePage = styled.div`
   width: 100%;
   height: 80%;
-  border: 10px ridge black;
+  box-shadow: 0px 2px 10px 1px ${({ theme }) => theme.colors.dark};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -22,25 +23,32 @@ export const TextWrap = styled.div`
  position: absolute;
  top: 20%;
  right: 10px;
-
  width:50%;
- font-size: 14px;
+ font-size:  ${({ theme }) => theme.fontSizes.small};
  display:flex;
  flex-direction:column;
  align-items:center;
 
- @media (min-width: 768px) {
-    font-size: 18px;
+ @media ( ${({ theme }) => theme.media.tablet}) {
+    font-size: ${({ theme }) => theme.fontSizes.medium}
   }
-  @media (min-width: 1200px) {
-    font-size: 32px;
+  @media ( ${({ theme }) => theme.media.laptop}) {
+    font-size: ${({ theme }) => theme.fontSizes.large}
   }
 `;
 
+// CONTACTS PAGE
 
 export const ContactPage = styled.div`
  display:flex;
  flex-direction: column;
  gap: 12px;
  width: 100%;
+ padding: 20px;
+`;
+
+export const CenterDiv = styled.div`
+  display:flex;
+  justify-content: center;
+  align-items: center;
 `;
