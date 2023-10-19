@@ -10,6 +10,13 @@ export const ContactListWrap = styled.ul`
 `;
 export const ListItem = styled.li`
   margin-bottom:8px;
-  width: calc((100% - 24px) / 3);
+  width: calc((100% - 24px));
   height: 100%;
+  @media ( ${({ theme }) => theme.media.tablet}) {
+    width: calc((100% - 24px) / 2);
+  };
+
+  @media ( ${({ theme }) => theme.media.laptop}) {
+    width: calc((100% - 24px) / 3);
+  } 
 `;
