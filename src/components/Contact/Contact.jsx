@@ -1,8 +1,9 @@
 import { deleteContact } from "redux/contacts/operations";
-import { ContactWrap, ButtonDel } from "./Contact.styled";
+import { ContactWrap, ButtonDel, ButtonEdit, TextContact } from "./Contact.styled";
 import { useDispatch} from "react-redux";
 import { ContactEditor } from "components/ContactEditor/ContactEditor";
 import { useState } from "react";
+import {AiOutlineDelete, AiOutlineEdit} from 'react-icons/ai'
 
 export const Contact = ({contact })=>{
 
@@ -20,9 +21,10 @@ export const Contact = ({contact })=>{
     const {id, name, number} = contact;
     return(
     <ContactWrap>
-        <p>{name}: {number}</p>
-        <ButtonDel onClick={()=> dispatch(deleteContact(id))}>Delete</ButtonDel>
-        <button onClick={handleEditClick}>edit </button>
+        <TextContact>{name}</TextContact>
+        <TextContact>{number}</TextContact>
+        <ButtonDel onClick={()=> dispatch(deleteContact(id))}><AiOutlineDelete size={16}/></ButtonDel>
+        <ButtonEdit onClick={handleEditClick}><AiOutlineEdit size={16}/></ButtonEdit>
         {isEdit && (
           <ContactEditor
             isOpen = {isEdit}

@@ -25,5 +25,10 @@ export const theme =Object.freeze({
         large: '32px',
         medium: '18px',
         small: '14px',
-      }
+      },
+      animation: {
+        cubicBezier:'0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98)',
+      },
+       
+
 })

@@ -24,5 +24,4 @@ export const BtnLogOut = styled.button`
   &:focus {
     color: ${({ theme }) => theme.colors.primary};
   }
-
 `;

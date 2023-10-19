@@ -1,6 +1,6 @@
 import { Formik } from "formik";
 import * as Yup from 'yup';
-import { Label, ErrorMsg, Input, PhonebookForm} from "./ContactForm.styled";
+import { Label, ErrorMsg, Input, PhonebookForm, BtnAddContact} from "./ContactForm.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "redux/contacts/selectors";
 import { addContact } from "redux/contacts/operations";
@@ -66,9 +66,9 @@ return(
     <ErrorMsg name="number" component="span"/>
     </Label>
 
-   <button type="submit">
+   <BtnAddContact type="submit">
        Add contact
-     </button>
+     </BtnAddContact>
   </PhonebookForm>
   </Formik>
 )}

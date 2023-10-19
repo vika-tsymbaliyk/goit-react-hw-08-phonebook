@@ -31,6 +31,5 @@ export const NavStyled = styled.nav`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(5)};
-
   margin-left: ${({ theme }) => theme.spacing(7)};
 `;
