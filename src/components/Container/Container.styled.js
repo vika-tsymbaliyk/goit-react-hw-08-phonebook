@@ -8,8 +8,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  /* background-color: ${({ theme }) => theme.colors.bg}; */
-
   @media ( ${({ theme }) => theme.media.tablet}) {
     width: ${({ theme }) => theme.spacing(195)};
     height: 900px;
